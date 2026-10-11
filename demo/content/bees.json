@@ -1,0 +1,110 @@
+{
+  "schemaVersion": "1.0.0",
+  "bees": [
+    {
+      "id": "bee_demo_planetes_p1_01",
+      "sourceId": "src_demo_planetes",
+      "page": 1,
+      "bbox": [
+        0.0605,
+        0.1556,
+        0.037,
+        0.0261
+      ],
+      "detection": {
+        "method": "synthetic",
+        "score": 1.0
+      },
+      "attachment": {
+        "status": "attached",
+        "notionId": "n_demo_ordre_planetes",
+        "anchor": {
+          "kind": "paragraph",
+          "text": "Le Système solaire compte huit planètes. Dans l'ordre à partir du Soleil : Mercure, Vénus, la Terre, Mars, Jupiter, Saturne, Uranus et Neptune.",
+          "bbox": [
+            0.1176,
+            0.1544,
+            0.7647,
+            0.0398
+          ]
+        }
+      }
+    },
+    {
+      "id": "bee_demo_planetes_p2_01",
+      "sourceId": "src_demo_planetes",
+      "page": 2,
+      "bbox": [
+        0.9076,
+        0.2458,
+        0.037,
+        0.0261
+      ],
+      "detection": {
+        "method": "synthetic",
+        "score": 1.0
+      },
+      "attachment": {
+        "status": "attached",
+        "notionId": "n_demo_records",
+        "anchor": {
+          "kind": "sentence",
+          "text": "Vénus est la planète la plus chaude du Système solaire, avec une température de surface d'environ 465 °C.",
+          "bbox": [
+            0.1176,
+            0.2447,
+            0.7647,
+            0.0398
+          ]
+        }
+      }
+    },
+    {
+      "id": "bee_demo_planetes_p3_01",
+      "sourceId": "src_demo_planetes",
+      "page": 3,
+      "bbox": [
+        0.0605,
+        0.1097,
+        0.037,
+        0.0261
+      ],
+      "detection": {
+        "method": "synthetic",
+        "score": 1.0
+      },
+      "attachment": {
+        "status": "ambiguous",
+        "candidates": [
+          {
+            "anchor": {
+              "kind": "paragraph",
+              "text": "La Terre met environ 365,25 jours pour effectuer un tour autour du Soleil.",
+              "bbox": [
+                0.1176,
+                0.0974,
+                0.7647,
+                0.0219
+              ]
+            },
+            "score": 0.52
+          },
+          {
+            "anchor": {
+              "kind": "paragraph",
+              "text": "L'axe de rotation d'Uranus est incliné d'environ 98° : la planète tourne pour ainsi dire couchée sur le côté.",
+              "bbox": [
+                0.1176,
+                0.1264,
+                0.7647,
+                0.0398
+              ]
+            },
+            "score": 0.48
+          }
+        ],
+        "note": "Abeille entre deux paragraphes : année terrestre ou axe d'Uranus ?"
+      }
+    }
+  ]
+}

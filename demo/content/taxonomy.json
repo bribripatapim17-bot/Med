@@ -1,0 +1,124 @@
+{
+  "schemaVersion": "1.0.0",
+  "years": [
+    {
+      "id": "y_demo",
+      "code": "DEMO",
+      "label": "Démo (non médical)",
+      "ues": [
+        {
+          "id": "ue_demo_astro",
+          "code": "UE D1",
+          "title": "Astronomie",
+          "semester": "S1",
+          "modules": [
+            {
+              "id": "mod_demo_systeme_solaire",
+              "title": "Le Système solaire",
+              "chapters": [
+                {
+                  "id": "ch_demo_planetes",
+                  "title": "Les planètes",
+                  "sourceIds": [
+                    "src_demo_planetes"
+                  ],
+                  "tier": "incontournable",
+                  "beeCount": 2,
+                  "notions": [
+                    {
+                      "id": "n_demo_ordre_planetes",
+                      "title": "Ordre des planètes à partir du Soleil",
+                      "priority": true,
+                      "beeIds": [
+                        "bee_demo_planetes_p1_01"
+                      ],
+                      "refs": [
+                        {
+                          "sourceId": "src_demo_planetes",
+                          "page": 1,
+                          "section": "1. Vue d'ensemble"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "n_demo_classification",
+                      "title": "Planètes telluriques et géantes",
+                      "priority": false,
+                      "beeIds": [],
+                      "refs": [
+                        {
+                          "sourceId": "src_demo_planetes",
+                          "page": 1,
+                          "section": "2. Classification des planètes"
+                        },
+                        {
+                          "sourceId": "src_demo_planetes",
+                          "page": 2,
+                          "section": "3. Les planètes géantes"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "n_demo_records",
+                      "title": "Records des planètes",
+                      "priority": true,
+                      "beeIds": [
+                        "bee_demo_planetes_p2_01"
+                      ],
+                      "refs": [
+                        {
+                          "sourceId": "src_demo_planetes",
+                          "page": 2,
+                          "section": "4. Quelques records"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "n_demo_annee_terrestre",
+                      "title": "Durée de l'année terrestre",
+                      "priority": false,
+                      "beeIds": [],
+                      "refs": [
+                        {
+                          "sourceId": "src_demo_planetes",
+                          "page": 3,
+                          "section": "5. Mouvements des planètes"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "n_demo_axe_uranus",
+                      "title": "Inclinaison de l'axe d'Uranus",
+                      "priority": false,
+                      "beeIds": [],
+                      "refs": [
+                        {
+                          "sourceId": "src_demo_planetes",
+                          "page": 3,
+                          "section": "5. Mouvements des planètes"
+                        }
+                      ]
+                    },
+                    {
+                      "id": "n_demo_kepler",
+                      "title": "Troisième loi de Kepler",
+                      "priority": false,
+                      "beeIds": [],
+                      "refs": [
+                        {
+                          "sourceId": "src_demo_planetes",
+                          "page": 3,
+                          "section": "6. Troisième loi de Kepler"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

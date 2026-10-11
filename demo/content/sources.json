@@ -1,0 +1,14 @@
+{
+  "schemaVersion": "1.0.0",
+  "sources": [
+    {
+      "id": "src_demo_planetes",
+      "fileName": "Chapitre 1 - Les planetes.pdf",
+      "relPath": "Demo/S1/UE D1 - Astronomie/Chapitre 1 - Les planetes.pdf",
+      "fileType": "pdf",
+      "sha256": "7ac48b7b390940222371f208378e2b78e51e99fdd3bab2a9c65b9d6e6e5547ce",
+      "pageCount": 3,
+      "textLayer": true
+    }
+  ]
+}

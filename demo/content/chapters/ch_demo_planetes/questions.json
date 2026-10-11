@@ -1,0 +1,1037 @@
+{
+  "schemaVersion": "1.0.0",
+  "chapterId": "ch_demo_planetes",
+  "gen": {
+    "model": "démo rédigée à la main (non générée par un modèle)",
+    "date": "2026-10-11T12:00:00Z",
+    "promptVersion": "demo-0",
+    "sourceHash": "f5264075425dd9bf18dcbd1bb3fbf97c8825baf340749e9c545c90a08ba1e264"
+  },
+  "questions": [
+    {
+      "chapterId": "ch_demo_planetes",
+      "notionId": "n_demo_ordre_planetes",
+      "type": "qcu",
+      "answerMode": "single",
+      "difficulty": 1,
+      "priority": true,
+      "beeIds": [
+        "bee_demo_planetes_p1_01"
+      ],
+      "stem": "Quelle planète est la plus proche du Soleil ?",
+      "propositions": [
+        {
+          "id": "A",
+          "text": "Mercure",
+          "correct": true,
+          "explanation": "Mercure est citée en premier dans l'ordre à partir du Soleil : c'est la plus proche.",
+          "sourceRefs": [
+            "s1"
+          ]
+        },
+        {
+          "id": "B",
+          "text": "Vénus",
+          "correct": false,
+          "explanation": "Vénus vient en deuxième position, juste après Mercure.",
+          "sourceRefs": [
+            "s1"
+          ]
+        },
+        {
+          "id": "C",
+          "text": "La Terre",
+          "correct": false,
+          "explanation": "La Terre est la troisième planète à partir du Soleil.",
+          "sourceRefs": [
+            "s1"
+          ]
+        },
+        {
+          "id": "D",
+          "text": "Mars",
+          "correct": false,
+          "explanation": "Mars est la quatrième planète, après la Terre.",
+          "sourceRefs": [
+            "s1"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "id": "s1",
+          "sourceId": "src_demo_planetes",
+          "page": 1,
+          "section": "1. Vue d'ensemble",
+          "kind": "text",
+          "excerpt": "Le Système solaire compte huit planètes. Dans l'ordre à partir du Soleil : Mercure, Vénus, la Terre, Mars, Jupiter, Saturne, Uranus et Neptune."
+        }
+      ],
+      "verify": {
+        "needsReview": false
+      },
+      "explain": {
+        "text": "Le cours donne l'ordre des planètes en partant du Soleil. La première citée, Mercure, est donc la plus proche.",
+        "analogy": {
+          "text": "C'est comme la première personne d'une file d'attente : elle est la plus près du guichet.",
+          "label": "hors cours"
+        },
+        "sourceRefs": [
+          "s1"
+        ]
+      }
+    },
+    {
+      "chapterId": "ch_demo_planetes",
+      "notionId": "n_demo_ordre_planetes",
+      "type": "qcm",
+      "answerMode": "multiple",
+      "difficulty": 2,
+      "priority": true,
+      "beeIds": [
+        "bee_demo_planetes_p1_01"
+      ],
+      "stem": "Parmi les propositions suivantes sur l'ordre des planètes à partir du Soleil, lesquelles sont exactes ?",
+      "propositions": [
+        {
+          "id": "A",
+          "text": "Vénus se situe entre Mercure et la Terre.",
+          "correct": true,
+          "explanation": "Dans l'ordre du cours, Vénus est citée après Mercure et avant la Terre.",
+          "sourceRefs": [
+            "s1"
+          ]
+        },
+        {
+          "id": "B",
+          "text": "Mars se situe entre la Terre et Jupiter.",
+          "correct": true,
+          "explanation": "Le cours cite Mars après la Terre et avant Jupiter.",
+          "sourceRefs": [
+            "s1"
+          ]
+        },
+        {
+          "id": "C",
+          "text": "Saturne est plus proche du Soleil que Jupiter.",
+          "correct": false,
+          "explanation": "Jupiter est citée avant Saturne : c'est Jupiter qui est la plus proche des deux.",
+          "sourceRefs": [
+            "s1"
+          ]
+        },
+        {
+          "id": "D",
+          "text": "Uranus est plus éloignée du Soleil que Neptune.",
+          "correct": false,
+          "explanation": "Neptune est citée en dernier, après Uranus : elle est donc plus éloignée.",
+          "sourceRefs": [
+            "s1"
+          ]
+        },
+        {
+          "id": "E",
+          "text": "Neptune est la dernière planète de la liste.",
+          "correct": true,
+          "explanation": "Le cours cite Neptune en dernier.",
+          "sourceRefs": [
+            "s1"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "id": "s1",
+          "sourceId": "src_demo_planetes",
+          "page": 1,
+          "section": "1. Vue d'ensemble",
+          "kind": "text",
+          "excerpt": "Le Système solaire compte huit planètes. Dans l'ordre à partir du Soleil : Mercure, Vénus, la Terre, Mars, Jupiter, Saturne, Uranus et Neptune."
+        }
+      ],
+      "verify": {
+        "needsReview": false
+      }
+    },
+    {
+      "chapterId": "ch_demo_planetes",
+      "notionId": "n_demo_ordre_planetes",
+      "type": "tf",
+      "answerMode": "single",
+      "difficulty": 1,
+      "priority": true,
+      "beeIds": [
+        "bee_demo_planetes_p1_01"
+      ],
+      "stem": "Vrai ou faux : la Terre est la troisième planète à partir du Soleil.",
+      "propositions": [
+        {
+          "id": "V",
+          "text": "Vrai",
+          "correct": true,
+          "explanation": "Le cours cite Mercure, Vénus, puis la Terre : elle est bien en troisième position.",
+          "sourceRefs": [
+            "s1"
+          ]
+        },
+        {
+          "id": "F",
+          "text": "Faux",
+          "correct": false,
+          "explanation": "L'affirmation est exacte : dans l'ordre du cours, la Terre vient après Mercure et Vénus.",
+          "sourceRefs": [
+            "s1"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "id": "s1",
+          "sourceId": "src_demo_planetes",
+          "page": 1,
+          "section": "1. Vue d'ensemble",
+          "kind": "text",
+          "excerpt": "Le Système solaire compte huit planètes. Dans l'ordre à partir du Soleil : Mercure, Vénus, la Terre, Mars, Jupiter, Saturne, Uranus et Neptune."
+        }
+      ],
+      "verify": {
+        "needsReview": false
+      }
+    },
+    {
+      "chapterId": "ch_demo_planetes",
+      "notionId": "n_demo_ordre_planetes",
+      "type": "qcm",
+      "answerMode": "multiple",
+      "difficulty": 3,
+      "priority": true,
+      "beeIds": [
+        "bee_demo_planetes_p1_01"
+      ],
+      "stem": "Parmi les affirmations suivantes sur le rang des planètes à partir du Soleil, lesquelles sont exactes ?",
+      "propositions": [
+        {
+          "id": "A",
+          "text": "Quatre planètes sont plus proches du Soleil que Jupiter.",
+          "correct": true,
+          "explanation": "Mercure, Vénus, la Terre et Mars précèdent Jupiter dans la liste du cours.",
+          "sourceRefs": [
+            "s1"
+          ]
+        },
+        {
+          "id": "B",
+          "text": "Saturne est la sixième planète.",
+          "correct": true,
+          "explanation": "Mercure, Vénus, la Terre, Mars, Jupiter puis Saturne : sixième position.",
+          "sourceRefs": [
+            "s1"
+          ]
+        },
+        {
+          "id": "C",
+          "text": "Uranus est la septième planète.",
+          "correct": true,
+          "explanation": "Uranus vient juste après Saturne : septième position.",
+          "sourceRefs": [
+            "s1"
+          ]
+        },
+        {
+          "id": "D",
+          "text": "Neptune est la septième planète.",
+          "correct": false,
+          "explanation": "Neptune est la huitième et dernière planète citée ; la septième est Uranus.",
+          "sourceRefs": [
+            "s1"
+          ]
+        },
+        {
+          "id": "E",
+          "text": "Trois planètes séparent la Terre de Saturne.",
+          "correct": false,
+          "explanation": "Seules Mars et Jupiter se trouvent entre la Terre et Saturne : deux planètes, pas trois.",
+          "sourceRefs": [
+            "s1"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "id": "s1",
+          "sourceId": "src_demo_planetes",
+          "page": 1,
+          "section": "1. Vue d'ensemble",
+          "kind": "text",
+          "excerpt": "Le Système solaire compte huit planètes. Dans l'ordre à partir du Soleil : Mercure, Vénus, la Terre, Mars, Jupiter, Saturne, Uranus et Neptune."
+        }
+      ],
+      "verify": {
+        "needsReview": false
+      },
+      "explain": {
+        "text": "Il suffit de numéroter la liste du cours : 1 Mercure, 2 Vénus, 3 la Terre, 4 Mars, 5 Jupiter, 6 Saturne, 7 Uranus, 8 Neptune.",
+        "analogy": null,
+        "sourceRefs": [
+          "s1"
+        ]
+      }
+    },
+    {
+      "chapterId": "ch_demo_planetes",
+      "notionId": "n_demo_classification",
+      "type": "qcu",
+      "answerMode": "single",
+      "difficulty": 1,
+      "priority": false,
+      "stem": "Laquelle de ces planètes est une planète tellurique ?",
+      "propositions": [
+        {
+          "id": "A",
+          "text": "Jupiter",
+          "correct": false,
+          "explanation": "Jupiter est une géante gazeuse.",
+          "sourceRefs": [
+            "s1"
+          ]
+        },
+        {
+          "id": "B",
+          "text": "Mars",
+          "correct": true,
+          "explanation": "Mars fait partie des planètes telluriques citées par le cours : Mercure, Vénus, la Terre et Mars.",
+          "sourceRefs": [
+            "s2"
+          ]
+        },
+        {
+          "id": "C",
+          "text": "Saturne",
+          "correct": false,
+          "explanation": "Saturne est une géante gazeuse.",
+          "sourceRefs": [
+            "s1"
+          ]
+        },
+        {
+          "id": "D",
+          "text": "Neptune",
+          "correct": false,
+          "explanation": "Neptune est une géante de glaces.",
+          "sourceRefs": [
+            "s1"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "id": "s1",
+          "sourceId": "src_demo_planetes",
+          "page": 2,
+          "section": "3. Les planètes géantes",
+          "kind": "text",
+          "excerpt": "Jupiter et Saturne sont des géantes gazeuses, composées principalement d'hydrogène et d'hélium. Uranus et Neptune sont des géantes de glaces."
+        },
+        {
+          "id": "s2",
+          "sourceId": "src_demo_planetes",
+          "page": 1,
+          "section": "2. Classification des planètes",
+          "kind": "text",
+          "excerpt": "Les planètes telluriques (Mercure, Vénus, la Terre et Mars) sont rocheuses et possèdent une surface solide."
+        }
+      ],
+      "verify": {
+        "needsReview": false
+      }
+    },
+    {
+      "chapterId": "ch_demo_planetes",
+      "notionId": "n_demo_classification",
+      "type": "tf",
+      "answerMode": "single",
+      "difficulty": 2,
+      "priority": false,
+      "stem": "Vrai ou faux : Uranus et Neptune sont des géantes gazeuses.",
+      "propositions": [
+        {
+          "id": "V",
+          "text": "Vrai",
+          "correct": false,
+          "explanation": "Le cours classe Uranus et Neptune parmi les géantes de glaces, pas parmi les géantes gazeuses.",
+          "sourceRefs": [
+            "s1"
+          ]
+        },
+        {
+          "id": "F",
+          "text": "Faux",
+          "correct": true,
+          "explanation": "Les géantes gazeuses sont Jupiter et Saturne ; Uranus et Neptune sont des géantes de glaces.",
+          "sourceRefs": [
+            "s1"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "id": "s1",
+          "sourceId": "src_demo_planetes",
+          "page": 2,
+          "section": "3. Les planètes géantes",
+          "kind": "text",
+          "excerpt": "Jupiter et Saturne sont des géantes gazeuses, composées principalement d'hydrogène et d'hélium. Uranus et Neptune sont des géantes de glaces."
+        }
+      ],
+      "verify": {
+        "needsReview": false
+      }
+    },
+    {
+      "chapterId": "ch_demo_planetes",
+      "notionId": "n_demo_classification",
+      "type": "qcm",
+      "answerMode": "multiple",
+      "difficulty": 3,
+      "priority": false,
+      "stem": "D'après le tableau de classification, quelles associations sont exactes ?",
+      "propositions": [
+        {
+          "id": "A",
+          "text": "Telluriques : roches et métaux",
+          "correct": true,
+          "explanation": "La ligne « Telluriques » indique « Roches et métaux ».",
+          "sourceRefs": [
+            "s1"
+          ]
+        },
+        {
+          "id": "B",
+          "text": "Géantes gazeuses : hydrogène et hélium",
+          "correct": true,
+          "explanation": "La ligne « Géantes gazeuses » indique « Hydrogène et hélium ».",
+          "sourceRefs": [
+            "s1"
+          ]
+        },
+        {
+          "id": "C",
+          "text": "Géantes de glaces : hydrogène et hélium",
+          "correct": false,
+          "explanation": "La ligne « Géantes de glaces » indique des glaces (eau, ammoniac, méthane), pas hydrogène et hélium.",
+          "sourceRefs": [
+            "s1"
+          ]
+        },
+        {
+          "id": "D",
+          "text": "Mars : géante de glaces",
+          "correct": false,
+          "explanation": "Mars figure dans la ligne « Telluriques ».",
+          "sourceRefs": [
+            "s1"
+          ]
+        },
+        {
+          "id": "E",
+          "text": "La Terre : roches et métaux",
+          "correct": true,
+          "explanation": "La Terre figure dans la ligne « Telluriques », dont la composition est « Roches et métaux ».",
+          "sourceRefs": [
+            "s1"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "id": "s1",
+          "sourceId": "src_demo_planetes",
+          "page": 1,
+          "section": "2. Classification des planètes",
+          "kind": "table",
+          "excerpt": "Telluriques Mercure, Vénus, Terre, Mars Roches et métaux Géantes gazeuses Jupiter, Saturne Hydrogène et hélium Géantes de glaces Uranus, Neptune Glaces (eau, ammoniac, méthane)",
+          "image": {
+            "bbox": [
+              0.1176,
+              0.3444,
+              0.7647,
+              0.114
+            ]
+          },
+          "alt": "Tableau : catégories de planètes, planètes concernées et composition principale"
+        }
+      ],
+      "verify": {
+        "needsReview": true,
+        "reason": "Réponses tirées d'un tableau : vérifier la lecture des lignes sur la capture."
+      }
+    },
+    {
+      "chapterId": "ch_demo_planetes",
+      "notionId": "n_demo_records",
+      "type": "qcu",
+      "answerMode": "single",
+      "difficulty": 1,
+      "priority": true,
+      "beeIds": [
+        "bee_demo_planetes_p2_01"
+      ],
+      "stem": "Quelle est la planète la plus chaude du Système solaire ?",
+      "propositions": [
+        {
+          "id": "A",
+          "text": "Mercure",
+          "correct": false,
+          "explanation": "Le cours désigne Vénus comme la planète la plus chaude, pas Mercure.",
+          "sourceRefs": [
+            "s1"
+          ]
+        },
+        {
+          "id": "B",
+          "text": "Vénus",
+          "correct": true,
+          "explanation": "Le cours : Vénus est la planète la plus chaude, avec une température de surface d'environ 465 °C.",
+          "sourceRefs": [
+            "s1"
+          ]
+        },
+        {
+          "id": "C",
+          "text": "La Terre",
+          "correct": false,
+          "explanation": "La Terre n'est pas citée comme la plus chaude : c'est Vénus.",
+          "sourceRefs": [
+            "s1"
+          ]
+        },
+        {
+          "id": "D",
+          "text": "Mars",
+          "correct": false,
+          "explanation": "Mars n'est pas citée comme la plus chaude : c'est Vénus.",
+          "sourceRefs": [
+            "s1"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "id": "s1",
+          "sourceId": "src_demo_planetes",
+          "page": 2,
+          "section": "4. Quelques records",
+          "kind": "text",
+          "excerpt": "Vénus est la planète la plus chaude du Système solaire, avec une température de surface d'environ 465 °C."
+        }
+      ],
+      "verify": {
+        "needsReview": false
+      },
+      "explain": {
+        "text": "Le cours cite un record : Vénus est la planète la plus chaude du Système solaire, avec environ 465 °C en surface.",
+        "analogy": {
+          "text": "Pense à une étiquette « championne de chaleur » collée sur Vénus.",
+          "label": "hors cours"
+        },
+        "sourceRefs": [
+          "s1"
+        ]
+      }
+    },
+    {
+      "chapterId": "ch_demo_planetes",
+      "notionId": "n_demo_records",
+      "type": "tf",
+      "answerMode": "single",
+      "difficulty": 2,
+      "priority": true,
+      "beeIds": [
+        "bee_demo_planetes_p2_01"
+      ],
+      "stem": "Vrai ou faux : Mercure est la planète la plus chaude, car c'est la plus proche du Soleil.",
+      "propositions": [
+        {
+          "id": "V",
+          "text": "Vrai",
+          "correct": false,
+          "explanation": "Le cours désigne Vénus, et non Mercure, comme la planète la plus chaude du Système solaire.",
+          "sourceRefs": [
+            "s1"
+          ]
+        },
+        {
+          "id": "F",
+          "text": "Faux",
+          "correct": true,
+          "explanation": "Vénus est la planète la plus chaude (environ 465 °C en surface), pas Mercure.",
+          "sourceRefs": [
+            "s1"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "id": "s1",
+          "sourceId": "src_demo_planetes",
+          "page": 2,
+          "section": "4. Quelques records",
+          "kind": "text",
+          "excerpt": "Vénus est la planète la plus chaude du Système solaire, avec une température de surface d'environ 465 °C."
+        }
+      ],
+      "verify": {
+        "needsReview": false
+      }
+    },
+    {
+      "chapterId": "ch_demo_planetes",
+      "notionId": "n_demo_records",
+      "type": "qcm",
+      "answerMode": "multiple",
+      "difficulty": 3,
+      "priority": true,
+      "beeIds": [
+        "bee_demo_planetes_p2_01"
+      ],
+      "stem": "Parmi les affirmations suivantes sur les records des planètes, lesquelles sont exactes ?",
+      "propositions": [
+        {
+          "id": "A",
+          "text": "La plus grande planète est aussi la plus chaude.",
+          "correct": false,
+          "explanation": "Jupiter est la plus grande ; la plus chaude est Vénus.",
+          "sourceRefs": [
+            "s1",
+            "s2"
+          ]
+        },
+        {
+          "id": "B",
+          "text": "Mercure est la plus petite planète.",
+          "correct": true,
+          "explanation": "Le cours : Mercure est la plus petite.",
+          "sourceRefs": [
+            "s1"
+          ]
+        },
+        {
+          "id": "C",
+          "text": "La température de surface de Vénus est d'environ 465 °C.",
+          "correct": true,
+          "explanation": "C'est la valeur donnée par le cours.",
+          "sourceRefs": [
+            "s2"
+          ]
+        },
+        {
+          "id": "D",
+          "text": "Vénus est plus chaude que Mercure.",
+          "correct": true,
+          "explanation": "Vénus est la planète la plus chaude : elle est donc plus chaude que Mercure.",
+          "sourceRefs": [
+            "s2"
+          ]
+        },
+        {
+          "id": "E",
+          "text": "Mercure est la planète la plus chaude car la plus proche du Soleil.",
+          "correct": false,
+          "explanation": "Le cours désigne Vénus comme la plus chaude.",
+          "sourceRefs": [
+            "s2"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "id": "s1",
+          "sourceId": "src_demo_planetes",
+          "page": 2,
+          "section": "4. Quelques records",
+          "kind": "text",
+          "excerpt": "Jupiter est la plus grande planète du Système solaire. Mercure est la plus petite."
+        },
+        {
+          "id": "s2",
+          "sourceId": "src_demo_planetes",
+          "page": 2,
+          "section": "4. Quelques records",
+          "kind": "text",
+          "excerpt": "Vénus est la planète la plus chaude du Système solaire, avec une température de surface d'environ 465 °C."
+        }
+      ],
+      "verify": {
+        "needsReview": false
+      }
+    },
+    {
+      "chapterId": "ch_demo_planetes",
+      "notionId": "n_demo_annee_terrestre",
+      "type": "qcu",
+      "answerMode": "single",
+      "difficulty": 1,
+      "priority": false,
+      "stem": "Quelle est la durée approximative de l'année terrestre selon le cours ?",
+      "propositions": [
+        {
+          "id": "A",
+          "text": "Environ 24 heures",
+          "correct": false,
+          "explanation": "24 heures n'est pas la durée d'un tour autour du Soleil : le cours donne environ 365,25 jours.",
+          "sourceRefs": [
+            "s1"
+          ]
+        },
+        {
+          "id": "B",
+          "text": "Environ 30 jours",
+          "correct": false,
+          "explanation": "Le cours donne environ 365,25 jours pour un tour autour du Soleil.",
+          "sourceRefs": [
+            "s1"
+          ]
+        },
+        {
+          "id": "C",
+          "text": "Environ 365,25 jours",
+          "correct": true,
+          "explanation": "C'est la durée donnée par le cours pour un tour de la Terre autour du Soleil.",
+          "sourceRefs": [
+            "s1"
+          ]
+        },
+        {
+          "id": "D",
+          "text": "Environ 687 jours",
+          "correct": false,
+          "explanation": "Le cours donne environ 365,25 jours pour la Terre.",
+          "sourceRefs": [
+            "s1"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "id": "s1",
+          "sourceId": "src_demo_planetes",
+          "page": 3,
+          "section": "5. Mouvements des planètes",
+          "kind": "text",
+          "excerpt": "La Terre met environ 365,25 jours pour effectuer un tour autour du Soleil."
+        }
+      ],
+      "verify": {
+        "needsReview": false
+      }
+    },
+    {
+      "chapterId": "ch_demo_planetes",
+      "notionId": "n_demo_annee_terrestre",
+      "type": "tf",
+      "answerMode": "single",
+      "difficulty": 2,
+      "priority": false,
+      "stem": "Vrai ou faux : la Terre met exactement 365 jours pour faire un tour autour du Soleil.",
+      "propositions": [
+        {
+          "id": "V",
+          "text": "Vrai",
+          "correct": false,
+          "explanation": "Le cours indique « environ 365,25 jours », pas exactement 365.",
+          "sourceRefs": [
+            "s1"
+          ]
+        },
+        {
+          "id": "F",
+          "text": "Faux",
+          "correct": true,
+          "explanation": "Le cours donne environ 365,25 jours.",
+          "sourceRefs": [
+            "s1"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "id": "s1",
+          "sourceId": "src_demo_planetes",
+          "page": 3,
+          "section": "5. Mouvements des planètes",
+          "kind": "text",
+          "excerpt": "La Terre met environ 365,25 jours pour effectuer un tour autour du Soleil."
+        }
+      ],
+      "verify": {
+        "needsReview": false
+      }
+    },
+    {
+      "chapterId": "ch_demo_planetes",
+      "notionId": "n_demo_axe_uranus",
+      "type": "qcu",
+      "answerMode": "single",
+      "difficulty": 1,
+      "priority": false,
+      "stem": "De combien l'axe de rotation d'Uranus est-il incliné, d'après le cours ?",
+      "propositions": [
+        {
+          "id": "A",
+          "text": "Environ 23°",
+          "correct": false,
+          "explanation": "Le cours indique environ 98° pour Uranus.",
+          "sourceRefs": [
+            "s1"
+          ]
+        },
+        {
+          "id": "B",
+          "text": "Environ 45°",
+          "correct": false,
+          "explanation": "Le cours indique environ 98° pour Uranus.",
+          "sourceRefs": [
+            "s1"
+          ]
+        },
+        {
+          "id": "C",
+          "text": "Environ 98°",
+          "correct": true,
+          "explanation": "Le cours : l'axe de rotation d'Uranus est incliné d'environ 98°.",
+          "sourceRefs": [
+            "s1"
+          ]
+        },
+        {
+          "id": "D",
+          "text": "Environ 180°",
+          "correct": false,
+          "explanation": "Le cours indique environ 98°, pas 180°.",
+          "sourceRefs": [
+            "s1"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "id": "s1",
+          "sourceId": "src_demo_planetes",
+          "page": 3,
+          "section": "5. Mouvements des planètes",
+          "kind": "text",
+          "excerpt": "L'axe de rotation d'Uranus est incliné d'environ 98° : la planète tourne pour ainsi dire couchée sur le côté."
+        }
+      ],
+      "verify": {
+        "needsReview": false
+      }
+    },
+    {
+      "chapterId": "ch_demo_planetes",
+      "notionId": "n_demo_axe_uranus",
+      "type": "tf",
+      "answerMode": "single",
+      "difficulty": 2,
+      "priority": false,
+      "stem": "Vrai ou faux : Uranus tourne pour ainsi dire couchée sur le côté.",
+      "propositions": [
+        {
+          "id": "V",
+          "text": "Vrai",
+          "correct": true,
+          "explanation": "C'est la formulation du cours : son axe est incliné d'environ 98°.",
+          "sourceRefs": [
+            "s1"
+          ]
+        },
+        {
+          "id": "F",
+          "text": "Faux",
+          "correct": false,
+          "explanation": "Le cours dit au contraire que la planète tourne pour ainsi dire couchée sur le côté.",
+          "sourceRefs": [
+            "s1"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "id": "s1",
+          "sourceId": "src_demo_planetes",
+          "page": 3,
+          "section": "5. Mouvements des planètes",
+          "kind": "text",
+          "excerpt": "L'axe de rotation d'Uranus est incliné d'environ 98° : la planète tourne pour ainsi dire couchée sur le côté."
+        }
+      ],
+      "verify": {
+        "needsReview": false
+      }
+    },
+    {
+      "chapterId": "ch_demo_planetes",
+      "notionId": "n_demo_kepler",
+      "type": "clinical",
+      "answerMode": "single",
+      "difficulty": 2,
+      "priority": false,
+      "stem": "Quelle est sa période orbitale, en années ?",
+      "vignette": "Un astronome amateur étudie une planète fictive qui orbite autour du Soleil avec un demi-grand axe de 4 UA.",
+      "propositions": [
+        {
+          "id": "A",
+          "text": "2 ans",
+          "correct": false,
+          "explanation": "Avec T² = a³ et a = 4, on obtient T² = 64 : T ne peut pas valoir 2 (T² = 4).",
+          "sourceRefs": [
+            "s1"
+          ]
+        },
+        {
+          "id": "B",
+          "text": "4 ans",
+          "correct": false,
+          "explanation": "Si T valait 4, T² vaudrait 16, pas 64.",
+          "sourceRefs": [
+            "s1"
+          ]
+        },
+        {
+          "id": "C",
+          "text": "8 ans",
+          "correct": true,
+          "explanation": "T² = a³ = 4³ = 64, donc T = 8 années.",
+          "sourceRefs": [
+            "s1"
+          ]
+        },
+        {
+          "id": "D",
+          "text": "16 ans",
+          "correct": false,
+          "explanation": "Si T valait 16, T² vaudrait 256, pas 64.",
+          "sourceRefs": [
+            "s1"
+          ]
+        },
+        {
+          "id": "E",
+          "text": "64 ans",
+          "correct": false,
+          "explanation": "64 est la valeur de T², pas de T.",
+          "sourceRefs": [
+            "s1"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "id": "s1",
+          "sourceId": "src_demo_planetes",
+          "page": 3,
+          "section": "6. Troisième loi de Kepler",
+          "kind": "formula",
+          "excerpt": "T² = a³ (T en années, a en unités astronomiques)",
+          "image": {
+            "bbox": [
+              0.3025,
+              0.2922,
+              0.395,
+              0.0689
+            ]
+          },
+          "alt": "Formule encadrée : T au carré égale a au cube, T en années, a en unités astronomiques"
+        },
+        {
+          "id": "s2",
+          "sourceId": "src_demo_planetes",
+          "page": 3,
+          "section": "6. Troisième loi de Kepler",
+          "kind": "text",
+          "excerpt": "Pour une planète en orbite autour du Soleil, le carré de la période orbitale est proportionnel au cube du demi-grand axe de l'orbite :"
+        }
+      ],
+      "verify": {
+        "needsReview": false
+      },
+      "explain": {
+        "text": "Le cours donne la relation T² = a³ (T en années, a en UA). Avec a = 4 : T² = 4 × 4 × 4 = 64, donc T = 8.",
+        "analogy": null,
+        "sourceRefs": [
+          "s1",
+          "s2"
+        ]
+      }
+    },
+    {
+      "chapterId": "ch_demo_planetes",
+      "notionId": "n_demo_kepler",
+      "type": "qcu",
+      "answerMode": "single",
+      "difficulty": 1,
+      "priority": false,
+      "stem": "Quelle relation exprime la troisième loi de Kepler, d'après le cours ?",
+      "propositions": [
+        {
+          "id": "A",
+          "text": "T = a",
+          "correct": false,
+          "explanation": "La relation du cours relie le carré de T au cube de a : T² = a³.",
+          "sourceRefs": [
+            "s1"
+          ]
+        },
+        {
+          "id": "B",
+          "text": "T² = a³",
+          "correct": true,
+          "explanation": "C'est la formule encadrée du cours.",
+          "sourceRefs": [
+            "s1"
+          ]
+        },
+        {
+          "id": "C",
+          "text": "T³ = a²",
+          "correct": false,
+          "explanation": "Les exposants sont inversés par rapport à la formule du cours.",
+          "sourceRefs": [
+            "s1"
+          ]
+        },
+        {
+          "id": "D",
+          "text": "T = a²",
+          "correct": false,
+          "explanation": "La formule du cours est T² = a³, pas T = a².",
+          "sourceRefs": [
+            "s1"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "id": "s1",
+          "sourceId": "src_demo_planetes",
+          "page": 3,
+          "section": "6. Troisième loi de Kepler",
+          "kind": "formula",
+          "excerpt": "T² = a³ (T en années, a en unités astronomiques)",
+          "image": {
+            "bbox": [
+              0.3025,
+              0.2922,
+              0.395,
+              0.0689
+            ]
+          },
+          "alt": "Formule encadrée : T au carré égale a au cube, T en années, a en unités astronomiques"
+        }
+      ],
+      "verify": {
+        "needsReview": false
+      }
+    }
+  ]
+}

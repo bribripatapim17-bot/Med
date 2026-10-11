@@ -1,0 +1,175 @@
+{
+  "schemaVersion": "1.0.0",
+  "chapterId": "ch_demo_planetes",
+  "gen": {
+    "model": "démo rédigée à la main (non générée par un modèle)",
+    "date": "2026-10-11T12:00:00Z",
+    "promptVersion": "demo-0",
+    "sourceHash": "f5264075425dd9bf18dcbd1bb3fbf97c8825baf340749e9c545c90a08ba1e264"
+  },
+  "sheet": {
+    "title": "Les planètes : fiche de synthèse",
+    "items": [
+      {
+        "kind": "keypoint",
+        "text": "Ordre à partir du Soleil : Mercure, Vénus, la Terre, Mars, Jupiter, Saturne, Uranus, Neptune.",
+        "notionId": "n_demo_ordre_planetes",
+        "priority": true,
+        "beeIds": [
+          "bee_demo_planetes_p1_01"
+        ],
+        "sources": [
+          {
+            "id": "s1",
+            "sourceId": "src_demo_planetes",
+            "page": 1,
+            "section": "1. Vue d'ensemble",
+            "kind": "text",
+            "excerpt": "Le Système solaire compte huit planètes. Dans l'ordre à partir du Soleil : Mercure, Vénus, la Terre, Mars, Jupiter, Saturne, Uranus et Neptune."
+          }
+        ]
+      },
+      {
+        "kind": "number",
+        "text": "Vénus : la plus chaude (environ 465 °C en surface). Jupiter : la plus grande. Mercure : la plus petite.",
+        "notionId": "n_demo_records",
+        "priority": true,
+        "beeIds": [
+          "bee_demo_planetes_p2_01"
+        ],
+        "sources": [
+          {
+            "id": "s1",
+            "sourceId": "src_demo_planetes",
+            "page": 2,
+            "section": "4. Quelques records",
+            "kind": "text",
+            "excerpt": "Vénus est la planète la plus chaude du Système solaire, avec une température de surface d'environ 465 °C."
+          },
+          {
+            "id": "s2",
+            "sourceId": "src_demo_planetes",
+            "page": 2,
+            "section": "4. Quelques records",
+            "kind": "text",
+            "excerpt": "Jupiter est la plus grande planète du Système solaire. Mercure est la plus petite."
+          }
+        ]
+      },
+      {
+        "kind": "definition",
+        "text": "Planètes telluriques : Mercure, Vénus, la Terre et Mars, rocheuses, à surface solide.",
+        "notionId": "n_demo_classification",
+        "priority": false,
+        "sources": [
+          {
+            "id": "s1",
+            "sourceId": "src_demo_planetes",
+            "page": 1,
+            "section": "2. Classification des planètes",
+            "kind": "text",
+            "excerpt": "Les planètes telluriques (Mercure, Vénus, la Terre et Mars) sont rocheuses et possèdent une surface solide."
+          }
+        ]
+      },
+      {
+        "kind": "classification",
+        "text": "Telluriques : roches et métaux. Géantes gazeuses : hydrogène et hélium. Géantes de glaces : glaces (eau, ammoniac, méthane).",
+        "notionId": "n_demo_classification",
+        "priority": false,
+        "sources": [
+          {
+            "id": "s1",
+            "sourceId": "src_demo_planetes",
+            "page": 1,
+            "section": "2. Classification des planètes",
+            "kind": "table",
+            "excerpt": "Telluriques Mercure, Vénus, Terre, Mars Roches et métaux Géantes gazeuses Jupiter, Saturne Hydrogène et hélium Géantes de glaces Uranus, Neptune Glaces (eau, ammoniac, méthane)",
+            "image": {
+              "bbox": [
+                0.1176,
+                0.3444,
+                0.7647,
+                0.114
+              ]
+            },
+            "alt": "Tableau : catégories de planètes, planètes concernées et composition principale"
+          }
+        ]
+      },
+      {
+        "kind": "keypoint",
+        "text": "Géantes gazeuses : Jupiter et Saturne. Géantes de glaces : Uranus et Neptune.",
+        "notionId": "n_demo_classification",
+        "priority": false,
+        "sources": [
+          {
+            "id": "s1",
+            "sourceId": "src_demo_planetes",
+            "page": 2,
+            "section": "3. Les planètes géantes",
+            "kind": "text",
+            "excerpt": "Jupiter et Saturne sont des géantes gazeuses, composées principalement d'hydrogène et d'hélium. Uranus et Neptune sont des géantes de glaces."
+          }
+        ]
+      },
+      {
+        "kind": "number",
+        "text": "Année terrestre : environ 365,25 jours.",
+        "notionId": "n_demo_annee_terrestre",
+        "priority": false,
+        "sources": [
+          {
+            "id": "s1",
+            "sourceId": "src_demo_planetes",
+            "page": 3,
+            "section": "5. Mouvements des planètes",
+            "kind": "text",
+            "excerpt": "La Terre met environ 365,25 jours pour effectuer un tour autour du Soleil."
+          }
+        ]
+      },
+      {
+        "kind": "number",
+        "text": "Axe d'Uranus incliné d'environ 98° : elle tourne couchée sur le côté.",
+        "notionId": "n_demo_axe_uranus",
+        "priority": false,
+        "sources": [
+          {
+            "id": "s1",
+            "sourceId": "src_demo_planetes",
+            "page": 3,
+            "section": "5. Mouvements des planètes",
+            "kind": "text",
+            "excerpt": "L'axe de rotation d'Uranus est incliné d'environ 98° : la planète tourne pour ainsi dire couchée sur le côté."
+          }
+        ]
+      },
+      {
+        "kind": "formula",
+        "text": "Troisième loi de Kepler : T² = a³ (T en années, a en UA).",
+        "notionId": "n_demo_kepler",
+        "priority": false,
+        "sources": [
+          {
+            "id": "s1",
+            "sourceId": "src_demo_planetes",
+            "page": 3,
+            "section": "6. Troisième loi de Kepler",
+            "kind": "formula",
+            "excerpt": "T² = a³ (T en années, a en unités astronomiques)",
+            "image": {
+              "bbox": [
+                0.3025,
+                0.2922,
+                0.395,
+                0.0689
+              ]
+            },
+            "alt": "Formule encadrée : T au carré égale a au cube, T en années, a en unités astronomiques"
+          }
+        ]
+      }
+    ]
+  }
+}

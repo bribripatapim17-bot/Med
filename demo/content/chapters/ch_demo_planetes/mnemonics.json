@@ -1,0 +1,93 @@
+{
+  "schemaVersion": "1.0.0",
+  "chapterId": "ch_demo_planetes",
+  "gen": {
+    "model": "démo rédigée à la main (non générée par un modèle)",
+    "date": "2026-10-11T12:00:00Z",
+    "promptVersion": "demo-0",
+    "sourceHash": "f5264075425dd9bf18dcbd1bb3fbf97c8825baf340749e9c545c90a08ba1e264"
+  },
+  "mnemonics": [
+    {
+      "notionId": "n_demo_ordre_planetes",
+      "title": "Les huit planètes, dans l'ordre à partir du Soleil",
+      "list": {
+        "ordered": true,
+        "items": [
+          {
+            "text": "Mercure"
+          },
+          {
+            "text": "Vénus"
+          },
+          {
+            "text": "Terre"
+          },
+          {
+            "text": "Mars"
+          },
+          {
+            "text": "Jupiter"
+          },
+          {
+            "text": "Saturne"
+          },
+          {
+            "text": "Uranus"
+          },
+          {
+            "text": "Neptune"
+          }
+        ]
+      },
+      "sources": [
+        {
+          "id": "s1",
+          "sourceId": "src_demo_planetes",
+          "page": 1,
+          "section": "1. Vue d'ensemble",
+          "kind": "text",
+          "excerpt": "Le Système solaire compte huit planètes. Dans l'ordre à partir du Soleil : Mercure, Vénus, la Terre, Mars, Jupiter, Saturne, Uranus et Neptune."
+        }
+      ],
+      "mnemonic": {
+        "kind": "phrase",
+        "text": "Mon Vélo Transporte Mes Jolis Sacs Usés Noirs",
+        "mapping": [
+          {
+            "token": "Mon",
+            "itemIndex": 0
+          },
+          {
+            "token": "Vélo",
+            "itemIndex": 1
+          },
+          {
+            "token": "Transporte",
+            "itemIndex": 2
+          },
+          {
+            "token": "Mes",
+            "itemIndex": 3
+          },
+          {
+            "token": "Jolis",
+            "itemIndex": 4
+          },
+          {
+            "token": "Sacs",
+            "itemIndex": 5
+          },
+          {
+            "token": "Usés",
+            "itemIndex": 6
+          },
+          {
+            "token": "Noirs",
+            "itemIndex": 7
+          }
+        ]
+      }
+    }
+  ]
+}

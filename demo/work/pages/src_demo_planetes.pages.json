@@ -1,0 +1,400 @@
+{
+ "schemaVersion": "1.0.0",
+ "sourceId": "src_demo_planetes",
+ "file": {
+  "name": "Chapitre 1 - Les planetes.pdf",
+  "sha256": "7ac48b7b390940222371f208378e2b78e51e99fdd3bab2a9c65b9d6e6e5547ce",
+  "bytes": 11595
+ },
+ "pageCount": 3,
+ "textLayer": true,
+ "bodyFontSize": 11.0,
+ "pages": [
+  {
+   "page": 1,
+   "width": 595.0,
+   "height": 842.0,
+   "text": "UE D1 - Astronomie  |  Module 1 : Le Système solaire  |  COURS DE DÉMONSTRATION (fictif)\nChapitre 1 - Les planètes\n1. Vue d'ensemble\nLe Système solaire compte huit planètes. Dans l'ordre à partir du Soleil : Mercure, Vénus, la\nTerre, Mars, Jupiter, Saturne, Uranus et Neptune.\n2. Classification des planètes\nLes planètes telluriques (Mercure, Vénus, la Terre et Mars) sont rocheuses et possèdent une\nsurface solide. On distingue trois catégories de planètes selon leur composition principale\n(tableau ci-dessous).\nCatégorie\nPlanètes\nComposition principale\nTelluriques\nMercure, Vénus, Terre, Mars\nRoches et métaux\nGéantes gazeuses\nJupiter, Saturne\nHydrogène et hélium\nGéantes de glaces\nUranus, Neptune\nGlaces (eau, ammoniac, méthane)\n",
+   "blocks": [
+    {
+     "id": "p1b1",
+     "bbox": [
+      0.1176,
+      0.0333,
+      0.602,
+      0.0139
+     ],
+     "text": "UE D1 - Astronomie  |  Module 1 : Le Système solaire  |  COURS DE DÉMONSTRATION (fictif)",
+     "fontSize": 8.5,
+     "bold": false,
+     "heading": false
+    },
+    {
+     "id": "p1b2",
+     "bbox": [
+      0.1176,
+      0.0665,
+      0.3979,
+      0.0327
+     ],
+     "text": "Chapitre 1 - Les planètes",
+     "fontSize": 20.0,
+     "bold": true,
+     "heading": true
+    },
+    {
+     "id": "p1b3",
+     "bbox": [
+      0.1176,
+      0.1235,
+      0.2044,
+      0.0229
+     ],
+     "text": "1. Vue d'ensemble",
+     "fontSize": 14.0,
+     "bold": true,
+     "heading": true
+    },
+    {
+     "id": "p1b4",
+     "bbox": [
+      0.1176,
+      0.1544,
+      0.7515,
+      0.0372
+     ],
+     "text": "Le Système solaire compte huit planètes. Dans l'ordre à partir du Soleil : Mercure, Vénus, la\nTerre, Mars, Jupiter, Saturne, Uranus et Neptune.",
+     "fontSize": 11.0,
+     "bold": false,
+     "heading": false
+    },
+    {
+     "id": "p1b5",
+     "bbox": [
+      0.1176,
+      0.2328,
+      0.3282,
+      0.0229
+     ],
+     "text": "2. Classification des planètes",
+     "fontSize": 14.0,
+     "bold": true,
+     "heading": true
+    },
+    {
+     "id": "p1b6",
+     "bbox": [
+      0.1176,
+      0.2637,
+      0.7604,
+      0.0565
+     ],
+     "text": "Les planètes telluriques (Mercure, Vénus, la Terre et Mars) sont rocheuses et possèdent une\nsurface solide. On distingue trois catégories de planètes selon leur composition principale\n(tableau ci-dessous).",
+     "fontSize": 11.0,
+     "bold": false,
+     "heading": false
+    },
+    {
+     "id": "p1b7",
+     "bbox": [
+      0.1277,
+      0.3507,
+      0.6406,
+      0.0164
+     ],
+     "text": "Catégorie\nPlanètes\nComposition principale",
+     "fontSize": 10.0,
+     "bold": true,
+     "heading": false
+    },
+    {
+     "id": "p1b8",
+     "bbox": [
+      0.1277,
+      0.3792,
+      0.5892,
+      0.0163
+     ],
+     "text": "Telluriques\nMercure, Vénus, Terre, Mars\nRoches et métaux",
+     "fontSize": 10.0,
+     "bold": false,
+     "heading": false
+    },
+    {
+     "id": "p1b9",
+     "bbox": [
+      0.1277,
+      0.4077,
+      0.6088,
+      0.0163
+     ],
+     "text": "Géantes gazeuses\nJupiter, Saturne\nHydrogène et hélium",
+     "fontSize": 10.0,
+     "bold": false,
+     "heading": false
+    },
+    {
+     "id": "p1b10",
+     "bbox": [
+      0.1277,
+      0.4362,
+      0.7116,
+      0.0163
+     ],
+     "text": "Géantes de glaces\nUranus, Neptune\nGlaces (eau, ammoniac, méthane)",
+     "fontSize": 10.0,
+     "bold": false,
+     "heading": false
+    }
+   ],
+   "images": [],
+   "tables": [
+    {
+     "bbox": [
+      0.1176,
+      0.3444,
+      0.7647,
+      0.114
+     ],
+     "rows": [
+      [
+       "Catégorie",
+       "Planètes",
+       "Composition principale"
+      ],
+      [
+       "Telluriques",
+       "Mercure, Vénus, Terre, Mars",
+       "Roches et métaux"
+      ],
+      [
+       "Géantes gazeuses",
+       "Jupiter, Saturne",
+       "Hydrogène et hélium"
+      ],
+      [
+       "Géantes de glaces",
+       "Uranus, Neptune",
+       "Glaces (eau, ammoniac, méthane)"
+      ]
+     ]
+    }
+   ]
+  },
+  {
+   "page": 2,
+   "width": 595.0,
+   "height": 842.0,
+   "text": "UE D1 - Astronomie  |  Module 1 : Le Système solaire  |  COURS DE DÉMONSTRATION (fictif)\n3. Les planètes géantes\nJupiter et Saturne sont des géantes gazeuses, composées principalement d'hydrogène et\nd'hélium. Uranus et Neptune sont des géantes de glaces.\n4. Quelques records\nJupiter est la plus grande planète du Système solaire. Mercure est la plus petite.\nVénus est la planète la plus chaude du Système solaire, avec une température de surface\nd'environ 465 °C.\n",
+   "blocks": [
+    {
+     "id": "p2b1",
+     "bbox": [
+      0.1176,
+      0.0333,
+      0.602,
+      0.0139
+     ],
+     "text": "UE D1 - Astronomie  |  Module 1 : Le Système solaire  |  COURS DE DÉMONSTRATION (fictif)",
+     "fontSize": 8.5,
+     "bold": false,
+     "heading": false
+    },
+    {
+     "id": "p2b2",
+     "bbox": [
+      0.1176,
+      0.0665,
+      0.2642,
+      0.0229
+     ],
+     "text": "3. Les planètes géantes",
+     "fontSize": 14.0,
+     "bold": true,
+     "heading": true
+    },
+    {
+     "id": "p2b3",
+     "bbox": [
+      0.1176,
+      0.0974,
+      0.7331,
+      0.0372
+     ],
+     "text": "Jupiter et Saturne sont des géantes gazeuses, composées principalement d'hydrogène et\nd'hélium. Uranus et Neptune sont des géantes de glaces.",
+     "fontSize": 11.0,
+     "bold": false,
+     "heading": false
+    },
+    {
+     "id": "p2b4",
+     "bbox": [
+      0.1176,
+      0.1663,
+      0.2262,
+      0.0229
+     ],
+     "text": "4. Quelques records",
+     "fontSize": 14.0,
+     "bold": true,
+     "heading": true
+    },
+    {
+     "id": "p2b5",
+     "bbox": [
+      0.1176,
+      0.1971,
+      0.6566,
+      0.018
+     ],
+     "text": "Jupiter est la plus grande planète du Système solaire. Mercure est la plus petite.",
+     "fontSize": 11.0,
+     "bold": false,
+     "heading": false
+    },
+    {
+     "id": "p2b6",
+     "bbox": [
+      0.1176,
+      0.2447,
+      0.7358,
+      0.0372
+     ],
+     "text": "Vénus est la planète la plus chaude du Système solaire, avec une température de surface\nd'environ 465 °C.",
+     "fontSize": 11.0,
+     "bold": false,
+     "heading": false
+    }
+   ],
+   "images": [],
+   "tables": []
+  },
+  {
+   "page": 3,
+   "width": 595.0,
+   "height": 842.0,
+   "text": "UE D1 - Astronomie  |  Module 1 : Le Système solaire  |  COURS DE DÉMONSTRATION (fictif)\n5. Mouvements des planètes\nLa Terre met environ 365,25 jours pour effectuer un tour autour du Soleil.\nL'axe de rotation d'Uranus est incliné d'environ 98° : la planète tourne pour ainsi dire couchée\nsur le côté.\n6. Troisième loi de Kepler\nPour une planète en orbite autour du Soleil, le carré de la période orbitale est proportionnel\nau cube du demi-grand axe de l'orbite :\nT² = a³\n(T en années, a en unités astronomiques)\nExemple : une planète située à 1 UA du Soleil a une période de 1 an.\n",
+   "blocks": [
+    {
+     "id": "p3b1",
+     "bbox": [
+      0.1176,
+      0.0333,
+      0.602,
+      0.0139
+     ],
+     "text": "UE D1 - Astronomie  |  Module 1 : Le Système solaire  |  COURS DE DÉMONSTRATION (fictif)",
+     "fontSize": 8.5,
+     "bold": false,
+     "heading": false
+    },
+    {
+     "id": "p3b2",
+     "bbox": [
+      0.1176,
+      0.0665,
+      0.3191,
+      0.0229
+     ],
+     "text": "5. Mouvements des planètes",
+     "fontSize": 14.0,
+     "bold": true,
+     "heading": true
+    },
+    {
+     "id": "p3b3",
+     "bbox": [
+      0.1176,
+      0.0974,
+      0.5991,
+      0.018
+     ],
+     "text": "La Terre met environ 365,25 jours pour effectuer un tour autour du Soleil.",
+     "fontSize": 11.0,
+     "bold": false,
+     "heading": false
+    },
+    {
+     "id": "p3b4",
+     "bbox": [
+      0.1176,
+      0.1264,
+      0.764,
+      0.0372
+     ],
+     "text": "L'axe de rotation d'Uranus est incliné d'environ 98° : la planète tourne pour ainsi dire couchée\nsur le côté.",
+     "fontSize": 11.0,
+     "bold": false,
+     "heading": false
+    },
+    {
+     "id": "p3b5",
+     "bbox": [
+      0.1176,
+      0.2019,
+      0.2851,
+      0.0229
+     ],
+     "text": "6. Troisième loi de Kepler",
+     "fontSize": 14.0,
+     "bold": true,
+     "heading": true
+    },
+    {
+     "id": "p3b6",
+     "bbox": [
+      0.1176,
+      0.2328,
+      0.744,
+      0.0372
+     ],
+     "text": "Pour une planète en orbite autour du Soleil, le carré de la période orbitale est proportionnel\nau cube du demi-grand axe de l'orbite :",
+     "fontSize": 11.0,
+     "bold": false,
+     "heading": false
+    },
+    {
+     "id": "p3b7",
+     "bbox": [
+      0.45,
+      0.2993,
+      0.0999,
+      0.0327
+     ],
+     "text": "T² = a³",
+     "fontSize": 20.0,
+     "bold": true,
+     "heading": true
+    },
+    {
+     "id": "p3b8",
+     "bbox": [
+      0.36,
+      0.3373,
+      0.28,
+      0.0147
+     ],
+     "text": "(T en années, a en unités astronomiques)",
+     "fontSize": 9.0,
+     "bold": false,
+     "heading": false
+    },
+    {
+     "id": "p3b9",
+     "bbox": [
+      0.1176,
+      0.3824,
+      0.5663,
+      0.018
+     ],
+     "text": "Exemple : une planète située à 1 UA du Soleil a une période de 1 an.",
+     "fontSize": 11.0,
+     "bold": false,
+     "heading": false
+    }
+   ],
+   "images": [],
+   "tables": []
+  }
+ ]
+}

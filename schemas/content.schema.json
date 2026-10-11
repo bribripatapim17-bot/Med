@@ -1,0 +1,437 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://quizmed.local/schemas/content/1.0.0",
+  "title": "QuizMed - schéma des packs de contenu (v1.0.0)",
+  "description": "Source de vérité du JSON produit par le pipeline et lu par l'app iOS. Chaque pack (taxonomy, sources, bees, questions, sheet, mnemonics, manifest, index) est validé contre une définition de $defs. Le mot-clé x-builtRequired liste les champs ajoutés par l'étape build : requis seulement pour --stage built.",
+  "$defs": {
+    "schemaVersion": { "type": "string", "pattern": "^1\\.[0-9]+\\.[0-9]+$" },
+    "yearId":     { "type": "string", "pattern": "^y_[a-z0-9_]+$",    "maxLength": 40 },
+    "ueId":       { "type": "string", "pattern": "^ue_[a-z0-9_]+$",   "maxLength": 40 },
+    "moduleId":   { "type": "string", "pattern": "^mod_[a-z0-9_]+$",  "maxLength": 56 },
+    "chapterId":  { "type": "string", "pattern": "^ch_[a-z0-9_]+$",   "maxLength": 56 },
+    "notionId":   { "type": "string", "pattern": "^n_[a-z0-9_]+$",    "maxLength": 64 },
+    "sourceId":   { "type": "string", "pattern": "^src_[a-z0-9_]+$",  "maxLength": 56 },
+    "beeId":      { "type": "string", "pattern": "^bee_[a-z0-9_]+$",  "maxLength": 64 },
+    "questionId": { "type": "string", "pattern": "^q_[a-z0-9_]+$",    "maxLength": 72 },
+    "sheetId":    { "type": "string", "pattern": "^sh_[a-z0-9_]+$",   "maxLength": 56 },
+    "sheetItemId":{ "type": "string", "pattern": "^shi_[a-z0-9_]+$",  "maxLength": 72 },
+    "mnemonicId": { "type": "string", "pattern": "^mn_[a-z0-9_]+$",   "maxLength": 64 },
+    "refLabel":   { "type": "string", "pattern": "^s[0-9]{1,2}$", "description": "Étiquette locale d'une citation (s1, s2...) dans l'objet qui la porte." },
+    "sha256":     { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "dateTime":   { "type": "string", "format": "date-time" },
+
+    "bbox": {
+      "type": "array", "minItems": 4, "maxItems": 4,
+      "items": { "type": "number", "minimum": 0, "maximum": 1 },
+      "description": "[x, y, largeur, hauteur] normalisés sur la page (0..1), origine en haut à gauche."
+    },
+
+    "ImageCrop": {
+      "type": "object", "additionalProperties": false, "required": ["bbox"],
+      "properties": {
+        "bbox": { "$ref": "#/$defs/bbox" },
+        "path": { "type": "string", "pattern": "^pages/src_[a-z0-9_]+/p[0-9]{3}(?:_[a-z0-9]+)?\\.webp$", "description": "Renseigné par build (capture recadrée)." }
+      }
+    },
+
+    "SourceRef": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "sourceId", "page", "kind"],
+      "description": "Encadré « Dans le cours » : extrait copié tel quel (kind=text) ou capture (figure, table, formula), avec fichier, page et section.",
+      "properties": {
+        "id":      { "$ref": "#/$defs/refLabel" },
+        "sourceId":{ "$ref": "#/$defs/sourceId" },
+        "page":    { "type": "integer", "minimum": 1, "description": "Numéro de page (PDF) ou de diapo." },
+        "section": { "type": "string", "minLength": 1, "maxLength": 200 },
+        "kind":    { "enum": ["text", "figure", "table", "formula"] },
+        "excerpt": { "type": "string", "minLength": 3, "maxLength": 1200, "description": "Copié tel quel ; [...] pour sauter un passage. Vérifié contre le texte de la page." },
+        "image":   { "$ref": "#/$defs/ImageCrop" },
+        "alt":     { "type": "string", "minLength": 3, "maxLength": 300, "description": "Texte alternatif (VoiceOver) d'une capture." }
+      },
+      "allOf": [
+        { "if": { "properties": { "kind": { "const": "text" } } },
+          "then": { "required": ["excerpt"] } },
+        { "if": { "properties": { "kind": { "enum": ["figure", "table", "formula"] } } },
+          "then": { "required": ["image", "alt"] } }
+      ]
+    },
+
+    "Proposition": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "text", "correct", "explanation", "sourceRefs"],
+      "properties": {
+        "id":          { "type": "string", "pattern": "^(?:[A-E]|[VF])$" },
+        "text":        { "type": "string", "minLength": 1, "maxLength": 400 },
+        "correct":     { "type": "boolean" },
+        "explanation": { "type": "string", "minLength": 5, "maxLength": 800, "description": "Explication de CETTE proposition, y compris si elle est fausse." },
+        "sourceRefs":  { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "$ref": "#/$defs/refLabel" } }
+      }
+    },
+
+    "Verify": {
+      "type": "object", "additionalProperties": false, "required": ["needsReview"],
+      "properties": {
+        "needsReview": { "type": "boolean", "description": "true = badge « À vérifier »." },
+        "reason":      { "type": "string", "minLength": 5, "maxLength": 400 }
+      },
+      "if": { "properties": { "needsReview": { "const": true } } },
+      "then": { "required": ["reason"] }
+    },
+
+    "Explain": {
+      "type": "object", "additionalProperties": false, "required": ["text", "sourceRefs"],
+      "description": "Bouton « Explique-moi » : partie factuelle sourcée + analogie éventuelle, étiquetée hors cours.",
+      "properties": {
+        "text": { "type": "string", "minLength": 10, "maxLength": 1500 },
+        "analogy": {
+          "type": ["object", "null"], "additionalProperties": false, "required": ["text", "label"],
+          "properties": {
+            "text":  { "type": "string", "minLength": 5, "maxLength": 600 },
+            "label": { "const": "hors cours" }
+          }
+        },
+        "sourceRefs": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "$ref": "#/$defs/refLabel" } }
+      }
+    },
+
+    "GenInfo": {
+      "type": "object", "additionalProperties": false, "required": ["model", "date", "promptVersion"],
+      "x-builtRequired": ["sourceHash"],
+      "properties": {
+        "model":         { "type": "string", "minLength": 1 },
+        "date":          { "$ref": "#/$defs/dateTime" },
+        "promptVersion": { "type": "string", "minLength": 1 },
+        "sourceHash":    { "$ref": "#/$defs/sha256", "description": "Hash du texte des pages du chapitre au moment de la génération (détection de contenu périmé). Posé par `quizpipe stamp`, jamais à la main." }
+      }
+    },
+
+    "Question": {
+      "type": "object", "additionalProperties": false,
+      "required": ["chapterId", "notionId", "type", "answerMode", "difficulty", "priority", "stem", "propositions", "sources", "verify"],
+      "x-builtRequired": ["id", "hash", "widgetFriendly"],
+      "properties": {
+        "id":         { "$ref": "#/$defs/questionId" },
+        "chapterId":  { "$ref": "#/$defs/chapterId" },
+        "notionId":   { "$ref": "#/$defs/notionId" },
+        "type":       { "enum": ["qcm", "qcu", "tf", "clinical"] },
+        "answerMode": { "enum": ["single", "multiple"] },
+        "difficulty": { "enum": [1, 2, 3] },
+        "priority":   { "type": "boolean", "description": "true = notion abeille : badge sur la question et la correction." },
+        "beeIds":     { "type": "array", "uniqueItems": true, "items": { "$ref": "#/$defs/beeId" } },
+        "stem":       { "type": "string", "minLength": 5, "maxLength": 600 },
+        "vignette":   { "type": "string", "minLength": 10, "maxLength": 1200, "description": "Énoncé du cas clinique (type=clinical)." },
+        "propositions": { "type": "array", "minItems": 2, "maxItems": 5, "items": { "$ref": "#/$defs/Proposition" } },
+        "sources":    { "type": "array", "minItems": 1, "maxItems": 8, "items": { "$ref": "#/$defs/SourceRef" } },
+        "verify":     { "$ref": "#/$defs/Verify" },
+        "explain":    { "$ref": "#/$defs/Explain" },
+        "tags":       { "type": "array", "uniqueItems": true, "items": { "type": "string", "minLength": 1, "maxLength": 40 } },
+        "hash":       { "$ref": "#/$defs/sha256", "description": "Anti-doublons (énoncé + propositions normalisés). Calculé par build." },
+        "widgetFriendly": { "type": "boolean", "description": "Énoncé et propositions assez courts pour le widget. Calculé par build." }
+      },
+      "allOf": [
+        { "if": { "properties": { "type": { "const": "clinical" } } }, "then": { "required": ["vignette"] } }
+      ]
+    },
+
+    "QuestionsPack": {
+      "type": "object", "additionalProperties": false,
+      "required": ["schemaVersion", "chapterId", "questions"],
+      "properties": {
+        "schemaVersion": { "$ref": "#/$defs/schemaVersion" },
+        "chapterId":     { "$ref": "#/$defs/chapterId" },
+        "gen":           { "$ref": "#/$defs/GenInfo" },
+        "questions":     { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/Question" } }
+      }
+    },
+
+    "SheetItem": {
+      "type": "object", "additionalProperties": false,
+      "required": ["kind", "text", "priority", "sources"],
+      "x-builtRequired": ["id"],
+      "properties": {
+        "id":       { "$ref": "#/$defs/sheetItemId" },
+        "kind":     { "enum": ["definition", "keypoint", "number", "classification", "figure", "formula"] },
+        "text":     { "type": "string", "minLength": 3, "maxLength": 400 },
+        "notionId": { "$ref": "#/$defs/notionId" },
+        "priority": { "type": "boolean" },
+        "beeIds":   { "type": "array", "uniqueItems": true, "items": { "$ref": "#/$defs/beeId" } },
+        "sources":  { "type": "array", "minItems": 1, "maxItems": 3, "items": { "$ref": "#/$defs/SourceRef" } }
+      }
+    },
+
+    "Sheet": {
+      "type": "object", "additionalProperties": false, "required": ["title", "items"],
+      "x-builtRequired": ["id"],
+      "properties": {
+        "id":    { "$ref": "#/$defs/sheetId" },
+        "title": { "type": "string", "minLength": 3, "maxLength": 120 },
+        "items": { "type": "array", "minItems": 1, "maxItems": 16, "items": { "$ref": "#/$defs/SheetItem" } }
+      }
+    },
+
+    "SheetPack": {
+      "type": "object", "additionalProperties": false,
+      "required": ["schemaVersion", "chapterId", "sheet"],
+      "properties": {
+        "schemaVersion": { "$ref": "#/$defs/schemaVersion" },
+        "chapterId":     { "$ref": "#/$defs/chapterId" },
+        "gen":           { "$ref": "#/$defs/GenInfo" },
+        "sheet":         { "$ref": "#/$defs/Sheet" }
+      }
+    },
+
+    "MnemonicListItem": {
+      "type": "object", "additionalProperties": false, "required": ["text"],
+      "properties": { "text": { "type": "string", "minLength": 1, "maxLength": 200 } }
+    },
+
+    "MnemonicMapping": {
+      "type": "object", "additionalProperties": false, "required": ["token", "itemIndex"],
+      "properties": {
+        "token":     { "type": "string", "minLength": 1, "maxLength": 60 },
+        "itemIndex": { "type": ["integer", "null"], "minimum": 0, "description": "Rang de l'élément de la liste du cours ; null = mot de liaison." }
+      }
+    },
+
+    "Mnemonic": {
+      "type": "object", "additionalProperties": false,
+      "required": ["notionId", "title", "list", "sources", "mnemonic"],
+      "x-builtRequired": ["id", "verification"],
+      "properties": {
+        "id":       { "$ref": "#/$defs/mnemonicId" },
+        "notionId": { "$ref": "#/$defs/notionId" },
+        "title":    { "type": "string", "minLength": 3, "maxLength": 120 },
+        "list": {
+          "type": "object", "additionalProperties": false, "required": ["ordered", "items"],
+          "properties": {
+            "ordered": { "type": "boolean" },
+            "items":   { "type": "array", "minItems": 3, "maxItems": 30, "items": { "$ref": "#/$defs/MnemonicListItem" } }
+          }
+        },
+        "sources":  { "type": "array", "minItems": 1, "maxItems": 3, "items": { "$ref": "#/$defs/SourceRef" } },
+        "mnemonic": {
+          "type": "object", "additionalProperties": false, "required": ["kind", "text", "mapping"],
+          "properties": {
+            "kind":    { "enum": ["acronym", "phrase", "image"] },
+            "text":    { "type": "string", "minLength": 3, "maxLength": 300 },
+            "mapping": { "type": "array", "minItems": 3, "maxItems": 60, "items": { "$ref": "#/$defs/MnemonicMapping" } }
+          }
+        },
+        "verification": {
+          "type": "object", "additionalProperties": false, "required": ["complete", "ordered", "noExtras", "checkedAt"],
+          "properties": {
+            "complete":  { "type": "boolean" },
+            "ordered":   { "type": "boolean" },
+            "noExtras":  { "type": "boolean" },
+            "checkedAt": { "$ref": "#/$defs/dateTime" }
+          }
+        }
+      }
+    },
+
+    "MnemonicsPack": {
+      "type": "object", "additionalProperties": false,
+      "required": ["schemaVersion", "chapterId", "mnemonics"],
+      "properties": {
+        "schemaVersion": { "$ref": "#/$defs/schemaVersion" },
+        "chapterId":     { "$ref": "#/$defs/chapterId" },
+        "gen":           { "$ref": "#/$defs/GenInfo" },
+        "mnemonics":     { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/Mnemonic" } }
+      }
+    },
+
+    "NotionRef": {
+      "type": "object", "additionalProperties": false, "required": ["sourceId", "page"],
+      "properties": {
+        "sourceId": { "$ref": "#/$defs/sourceId" },
+        "page":     { "type": "integer", "minimum": 1 },
+        "section":  { "type": "string", "minLength": 1, "maxLength": 200 }
+      }
+    },
+
+    "Notion": {
+      "type": "object", "additionalProperties": false, "required": ["id", "title", "priority", "beeIds", "refs"],
+      "properties": {
+        "id":       { "$ref": "#/$defs/notionId" },
+        "title":    { "type": "string", "minLength": 2, "maxLength": 160 },
+        "priority": { "type": "boolean", "description": "true si au moins une abeille rattachée (attached ou validated)." },
+        "beeIds":   { "type": "array", "uniqueItems": true, "items": { "$ref": "#/$defs/beeId" } },
+        "refs":     { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/NotionRef" } }
+      }
+    },
+
+    "Chapter": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "title", "sourceIds", "tier", "beeCount", "notions"],
+      "properties": {
+        "id":        { "$ref": "#/$defs/chapterId" },
+        "title":     { "type": "string", "minLength": 2, "maxLength": 160 },
+        "sourceIds": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "$ref": "#/$defs/sourceId" } },
+        "tier":      { "enum": ["standard", "incontournable"], "description": "incontournable si au moins 2 abeilles rattachées." },
+        "beeCount":  { "type": "integer", "minimum": 0 },
+        "notions":   { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/Notion" } }
+      }
+    },
+
+    "Module": {
+      "type": "object", "additionalProperties": false, "required": ["id", "title", "chapters"],
+      "properties": {
+        "id":       { "$ref": "#/$defs/moduleId" },
+        "title":    { "type": "string", "minLength": 2, "maxLength": 160 },
+        "chapters": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/Chapter" } }
+      }
+    },
+
+    "UE": {
+      "type": "object", "additionalProperties": false, "required": ["id", "code", "title", "modules"],
+      "properties": {
+        "id":       { "$ref": "#/$defs/ueId" },
+        "code":     { "type": "string", "minLength": 1, "maxLength": 20 },
+        "title":    { "type": "string", "minLength": 2, "maxLength": 160 },
+        "semester": { "enum": ["S1", "S2"] },
+        "modules":  { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/Module" } }
+      }
+    },
+
+    "Year": {
+      "type": "object", "additionalProperties": false, "required": ["id", "code", "label", "ues"],
+      "properties": {
+        "id":    { "$ref": "#/$defs/yearId" },
+        "code":  { "enum": ["PASS_LAS", "DFGSM2", "DEMO"] },
+        "label": { "type": "string", "minLength": 2, "maxLength": 80 },
+        "ues":   { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/UE" } }
+      }
+    },
+
+    "Taxonomy": {
+      "type": "object", "additionalProperties": false, "required": ["schemaVersion", "years"],
+      "properties": {
+        "schemaVersion": { "$ref": "#/$defs/schemaVersion" },
+        "years":         { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/Year" } }
+      }
+    },
+
+    "Source": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "fileName", "relPath", "fileType", "sha256", "pageCount", "textLayer"],
+      "properties": {
+        "id":        { "$ref": "#/$defs/sourceId" },
+        "fileName":  { "type": "string", "minLength": 1, "maxLength": 255 },
+        "relPath":   { "type": "string", "minLength": 1, "maxLength": 512, "description": "Chemin relatif à la racine des cours (miroir du Drive)." },
+        "fileType":  { "enum": ["pdf", "pptx", "docx"] },
+        "sha256":    { "$ref": "#/$defs/sha256" },
+        "pageCount": { "type": "integer", "minimum": 1 },
+        "textLayer": { "type": "boolean", "description": "false = PDF scanné sans texte : OCR requis avant toute génération." },
+        "modifiedTime": { "$ref": "#/$defs/dateTime" }
+      }
+    },
+
+    "SourcesPack": {
+      "type": "object", "additionalProperties": false, "required": ["schemaVersion", "sources"],
+      "properties": {
+        "schemaVersion": { "$ref": "#/$defs/schemaVersion" },
+        "sources":       { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/Source" } }
+      }
+    },
+
+    "BeeAnchor": {
+      "type": "object", "additionalProperties": false, "required": ["kind"],
+      "properties": {
+        "kind": { "enum": ["sentence", "paragraph", "section", "figure", "table"] },
+        "text": { "type": "string", "minLength": 3, "maxLength": 1200, "description": "Passage marqué, copié tel quel." },
+        "bbox": { "$ref": "#/$defs/bbox" }
+      }
+    },
+
+    "Bee": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "sourceId", "page", "bbox", "detection", "attachment"],
+      "properties": {
+        "id":       { "$ref": "#/$defs/beeId" },
+        "sourceId": { "$ref": "#/$defs/sourceId" },
+        "page":     { "type": "integer", "minimum": 1 },
+        "bbox":     { "$ref": "#/$defs/bbox" },
+        "detection": {
+          "type": "object", "additionalProperties": false, "required": ["method", "score"],
+          "properties": {
+            "method": { "enum": ["embedded-image", "template", "vector", "manual", "synthetic"] },
+            "score":  { "type": "number", "minimum": 0, "maximum": 1 }
+          }
+        },
+        "attachment": {
+          "type": "object", "additionalProperties": false, "required": ["status"],
+          "properties": {
+            "status":   { "enum": ["attached", "ambiguous", "validated", "rejected"] },
+            "notionId": { "$ref": "#/$defs/notionId" },
+            "anchor":   { "$ref": "#/$defs/BeeAnchor" },
+            "candidates": {
+              "type": "array",
+              "items": {
+                "type": "object", "additionalProperties": false, "required": ["anchor", "score"],
+                "properties": { "anchor": { "$ref": "#/$defs/BeeAnchor" }, "score": { "type": "number", "minimum": 0, "maximum": 1 } }
+              }
+            },
+            "note": { "type": "string", "maxLength": 400 }
+          }
+        }
+      }
+    },
+
+    "BeesPack": {
+      "type": "object", "additionalProperties": false, "required": ["schemaVersion", "bees"],
+      "properties": {
+        "schemaVersion": { "$ref": "#/$defs/schemaVersion" },
+        "bees":          { "type": "array", "items": { "$ref": "#/$defs/Bee" } }
+      }
+    },
+
+    "ManifestFile": {
+      "type": "object", "additionalProperties": false, "required": ["path", "sha256", "bytes", "role"],
+      "properties": {
+        "path":   { "type": "string", "minLength": 1 },
+        "sha256": { "$ref": "#/$defs/sha256" },
+        "bytes":  { "type": "integer", "minimum": 0 },
+        "role":   { "enum": ["taxonomy", "sources", "bees", "index", "questions", "sheet", "mnemonics", "page"] }
+      }
+    },
+
+    "Manifest": {
+      "type": "object", "additionalProperties": false,
+      "required": ["schemaVersion", "contentVersion", "builtAt", "pipelineVersion", "kind", "files", "stats"],
+      "properties": {
+        "schemaVersion":   { "$ref": "#/$defs/schemaVersion" },
+        "contentVersion":  { "type": "string", "pattern": "^[0-9]{4}\\.[0-9]{2}\\.[0-9]{2}-[0-9]+$" },
+        "builtAt":         { "$ref": "#/$defs/dateTime" },
+        "pipelineVersion": { "type": "string", "minLength": 1 },
+        "kind":            { "enum": ["demo", "real"], "description": "demo = bandeau « Contenu de démonstration » dans l'app." },
+        "files": { "type": "array", "items": { "$ref": "#/$defs/ManifestFile" } },
+        "stats": {
+          "type": "object", "additionalProperties": { "type": "integer", "minimum": 0 }
+        }
+      }
+    },
+
+    "QuestionIndexItem": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "chapterId", "notionId", "type", "difficulty", "priority", "widgetFriendly"],
+      "properties": {
+        "id":             { "$ref": "#/$defs/questionId" },
+        "chapterId":      { "$ref": "#/$defs/chapterId" },
+        "notionId":       { "$ref": "#/$defs/notionId" },
+        "type":           { "enum": ["qcm", "qcu", "tf", "clinical"] },
+        "difficulty":     { "enum": [1, 2, 3] },
+        "priority":       { "type": "boolean" },
+        "widgetFriendly": { "type": "boolean" },
+        "needsReview":    { "type": "boolean" }
+      }
+    },
+
+    "QuestionIndex": {
+      "type": "object", "additionalProperties": false, "required": ["schemaVersion", "items"],
+      "properties": {
+        "schemaVersion": { "$ref": "#/$defs/schemaVersion" },
+        "items":         { "type": "array", "items": { "$ref": "#/$defs/QuestionIndexItem" } }
+      }
+    }
+  }
+}

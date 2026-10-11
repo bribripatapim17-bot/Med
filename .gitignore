@@ -1,0 +1,28 @@
+# Environnement et caches Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Dérivés régénérables de la démo (pages PNG, rapport de validation)
+demo/work/render/
+demo/work/validation.md
+
+# Cours réels : droit d'auteur de la fac, ne jamais publier ici.
+# La démo (fictive, non médicale) vit dans demo/ et reste versionnée.
+/courses/
+/work/
+/generated/
+/ios/QuizMed/Resources/Content/
+
+# Xcode et Swift Package Manager
+xcuserdata/
+*.xcuserstate
+DerivedData/
+.build/
+.swiftpm/
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+desktop.ini
